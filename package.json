@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "devDependencies": {
+    "@discourse/lint-configs": "2.37.2",
+    "ember-template-lint": "7.9.3",
+    "eslint": "9.39.2",
+    "prettier": "3.8.0",
+    "stylelint": "17.0.0"
+  },
+  "scripts": {
+    "lint": "eslint javascripts test --cache && ember-template-lint \"{javascripts,test}/**/*.gjs\" && stylelint \"common/**/*.scss\" && prettier . --check",
+    "lint:fix": "eslint javascripts test --fix && ember-template-lint \"{javascripts,test}/**/*.gjs\" --fix && stylelint \"common/**/*.scss\" --fix && prettier . --write",
+    "lint:js": "eslint javascripts test --cache",
+    "lint:hbs": "ember-template-lint \"{javascripts,test}/**/*.gjs\" --no-error-on-unmatched-pattern",
+    "lint:css": "stylelint \"common/**/*.scss\"",
+    "lint:prettier": "prettier . --check"
+  },
+  "engines": {
+    "node": ">= 22",
+    "pnpm": "^10"
+  },
+  "packageManager": "pnpm@10.28.0"
+}

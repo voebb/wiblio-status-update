@@ -1,0 +1,44 @@
+status_presets:
+  type: objects
+  default:
+    - emoji: house_with_garden
+      label: Homeoffice
+    - emoji: palm_tree
+      label: Urlaub
+    - emoji: face_with_medical_mask
+      label: Krank
+    - emoji: train
+      label: Mobil
+    - emoji: cross_mark
+      label: Abwesend
+    - emoji: coffee
+      label: Pause
+    - emoji: headphone
+      label: Fokus
+    - emoji: calendar
+      label: Meeting
+  schema:
+    name: status
+    properties:
+      emoji:
+        type: string
+        required: true
+        validations:
+          min_length: 1
+          max_length: 100
+      label:
+        type: string
+        required: true
+        validations:
+          min_length: 1
+          max_length: 100
+
+show_frequent_statuses:
+  type: bool
+  default: true
+
+frequent_status_limit:
+  type: integer
+  default: 5
+  min: 1
+  max: 10

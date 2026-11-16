@@ -1,0 +1,212 @@
+.wiblio-status-suggestions {
+  &__section {
+    margin-block-end: 1.25em;
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25em 0.75em;
+    margin-block: 0 0.5em;
+  }
+
+  &__heading {
+    margin: 0;
+    font-size: var(--font-0);
+  }
+
+  &__choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+
+  &__button {
+    gap: 0.5em;
+    max-width: 100%;
+    height: auto;
+    min-height: 2.5em;
+    white-space: normal;
+    text-align: start;
+
+    &.is-selected {
+      box-shadow: inset 0 0 0 2px var(--tertiary);
+    }
+  }
+
+  &__label {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  &__clear {
+    font-size: var(--font-down-1);
+  }
+}
+
+.wiblio-status-update {
+  &__custom-heading {
+    margin-block: 0 0.5em;
+    font-size: var(--font-0);
+  }
+}
+
+.wiblio-status-preset-editor {
+  width: 100%;
+  max-width: 40em;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 0 0 1em;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    border: 1px solid var(--primary-medium);
+    border-radius: var(--d-border-radius);
+    background: var(--secondary);
+
+    &.is-selected {
+      box-shadow: inset 0 0 0 2px var(--tertiary);
+    }
+
+    &.is-dragging {
+      opacity: 0.5;
+    }
+
+    &.is-drop-before::before,
+    &.is-drop-after::after {
+      content: "";
+      position: absolute;
+      inset-block: 0;
+      width: 3px;
+      background: var(--tertiary);
+      pointer-events: none;
+    }
+
+    &.is-drop-before::before {
+      inset-inline-start: -4px;
+    }
+
+    &.is-drop-after::after {
+      inset-inline-end: -4px;
+    }
+  }
+
+  &__preset {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    min-width: 0;
+    min-height: 2.5em;
+    padding: 0.5em 0.65em;
+    border: 0;
+    background: none;
+    color: var(--primary);
+    font: inherit;
+    text-align: start;
+    cursor: grab;
+
+    &:focus-visible {
+      outline: 2px solid var(--tertiary);
+      outline-offset: 2px;
+    }
+
+    .emoji {
+      flex-shrink: 0;
+      pointer-events: none;
+    }
+  }
+
+  &__label {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  &__remove {
+    flex-shrink: 0;
+    padding-inline: 0.4em;
+  }
+
+  &__form {
+    margin: 0;
+  }
+
+  &__composer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 0.75em;
+  }
+
+  &__field {
+    min-width: 0;
+  }
+
+  &__confirm {
+    width: 2.75em;
+    min-height: 2.75em;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  &__edit-actions {
+    display: flex;
+    gap: 0.5em;
+    margin-block-start: 0.5em;
+  }
+}
+
+.wiblio-status-preset-input {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  min-width: 0;
+  width: 100%;
+  min-height: 2.75em;
+  border: var(--d-input-border);
+  border-radius: var(--d-input-border-radius);
+  background: var(--d-input-bg-color);
+
+  &:focus-within {
+    outline: 2px solid var(--d-input-focused-color);
+    outline-offset: -1px;
+  }
+
+  .emoji-picker-trigger {
+    margin: 0.25em;
+  }
+
+  .wiblio-status-preset-input__description {
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+    padding-inline-start: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+
+    &:focus,
+    &:focus-visible {
+      // Wiblio applies an important outline directly to focused inputs.
+      outline: none !important;
+      box-shadow: none;
+    }
+
+    &:autofill {
+      // Keep the autofill background masked when a theme resets focus shadows.
+      box-shadow: inset 0 0 0 1000px var(--d-input-bg-color) !important;
+      -webkit-text-fill-color: var(--primary);
+    }
+  }
+}

@@ -1,0 +1,34 @@
+en:
+  theme_metadata:
+    description: "Add configurable status shortcuts and personal frequently used statuses."
+    settings:
+      status_presets:
+        description: "Add with + and click a status to edit it."
+        schema:
+          properties:
+            emoji:
+              label: "Emoji"
+              description: "Discourse emoji name, including custom emoji names."
+            label:
+              label: "Status text"
+      show_frequent_statuses: "Disabling this does not delete existing history."
+      frequent_status_limit: "Maximum number of personal suggestions to display."
+  wiblio_status_update:
+    remember_history: "Remember successfully saved statuses per user in their own browser and show personal suggestions."
+    presets: "Choose a status"
+    frequent: "Frequently used"
+    custom: "Your own status"
+    clear_history: "Clear history"
+    delete_status: "Delete status"
+    editor:
+      title: "Status presets"
+      status_text: "Status text"
+      add: "Add status"
+      confirm: "Apply change"
+      edit: "Edit status"
+      remove: "Remove status “%{label}”"
+      invalid: "Choose a valid emoji and status text of up to 100 characters."
+      duplicate: "This emoji/text pair is already in the list."
+      move_before: "Move one position earlier"
+      move_after: "Move one position later"
+      moved: "“%{label}” is at position %{position} of %{count}."

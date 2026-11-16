@@ -1,0 +1,34 @@
+de:
+  theme_metadata:
+    description: "Konfigurierbare Status-Schnellauswahl und persönlich häufig verwendete Status."
+    settings:
+      status_presets:
+        description: "Mit + hinzufügen, zum Bearbeiten anklicken."
+        schema:
+          properties:
+            emoji:
+              label: "Emoji"
+              description: "Discourse-Emoji-Name, auch Namen eigener Emojis."
+            label:
+              label: "Statustext"
+      show_frequent_statuses: "Das Deaktivieren löscht den vorhandenen Verlauf nicht."
+      frequent_status_limit: "Maximale Anzahl persönlicher Vorschläge."
+  wiblio_status_update:
+    remember_history: "Erfolgreich gespeicherte Status pro Nutzer im jeweiligen Browser merken und persönliche Vorschläge anzeigen."
+    presets: "Status auswählen"
+    frequent: "Häufig verwendet"
+    custom: "Eigener Status"
+    clear_history: "Verlauf löschen"
+    delete_status: "Status löschen"
+    editor:
+      title: "Status-Vorgaben"
+      status_text: "Statustext"
+      add: "Status hinzufügen"
+      confirm: "Änderung übernehmen"
+      edit: "Status bearbeiten"
+      remove: "Status „%{label}“ entfernen"
+      invalid: "Wähle ein gültiges Emoji und einen Statustext mit maximal 100 Zeichen."
+      duplicate: "Dieses Emoji-Text-Paar ist bereits in der Liste."
+      move_before: "Eine Position nach vorne"
+      move_after: "Eine Position nach hinten"
+      moved: "„%{label}“ steht an Position %{position} von %{count}."
